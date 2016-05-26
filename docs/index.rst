@@ -9,20 +9,20 @@ Python Agent DEvelopment framework
 Sistemas Multiagentes para Python!
 ----------------------------------
 
-PADE é um framework para desenvolvimento, execução e gerenciamento de sistemas multiagentes em ambientes de computação distribuída.
+PADE is a framework for the development, execution, and management of multi-agent systems in distributed computer environments.
 
-PADE é escrito 100% em Python e utiliza as bibliotecas do projeto `Twisted <http://twistedmatrix.com/>`_ para implementar a comunicação entre os nós da rede.
+PADE is fully written in Python code and uses the libraries from `Twisted <http://twistedmatrix.com/>`_ project to allow communication amonge the network nodes.
 
-PADE é software livre, licenciado sob os termos da licença MIT, desenvolvido no ambito da Universidade Federal do Ceará pelo Grupo de Redes Elétricas Inteligentes (GREI) que pertence ao departamento de Engenharia Elétrica.
+PADE is freeware, licensed under the MIT license terms, developed by the Smart Power Grids Research Group (GREI) with the Department of Electrical Engineering of the Federal University of Ceará.
 
-Qualquer um que queira contribuir com o projeto é convidado a baixar, executar, testar e enviar feedback a respeito das impressões tiradas da plataforma. 
+Anyone who is interested to contribute to the project is invited to download, run, test, and provide the developers with feedback about the platform.
 
-PADE é simples!
+PADE is Simple!
 ~~~~~~~~~~~~~~~~~
 
 ::
 
-    # este e o arquivo start_ams.py
+    # This is file start_mas.py
     from pade.misc.common import set_ams, start_loop
 
     if __name__ == '__main__':
@@ -30,53 +30,52 @@ PADE é simples!
         start_loop(list(), gui=True)
 
 
-E fácil de instalar!
+PADE is easy to install!
 ~~~~~~~~~~~~~~~~~~~~
 
-Para instalar o PADE basta executar o seguinte comando em um terminal linux: 
+To install PADE, just type the following command line from the prompt in a Linux terminal:
 
 ::
 
     $ pip install pade
     $ python start_ams.py
 
-Funcionalidades
-~~~~~~~~~~~~~~~
+General Functionalities
+~~~~~~~~~~~~~~~~~~~~~~~
 
-O PADE foi desenvolvido tendo em vista os requisitos para sistema de automação. PADE oferece os seguintes recursos em sua biblioteca para desenvolvimento de sistemas multiagentes:
-
-
-**Orientação a Objetos**
-  Abstração para construção de agentes e seus comportamentos utilizando conceitos de orientação a objetos;
-
-**Ambiente de execução**
-  Módulo para inicialização do ambiente de execução de agentes, inteiramente em código Python;
-
-**Mensagens no padrão FIPA-ACL**
-  Módulo para construção e tratamento de mensagens no padrão FIPA-ACL;
-
-**Filtragem de Mensagens**
-  Módulo para filtragem de mensagens;
-
-**Protocolos FIPA**
-  Módulo para a implementação dos protocolos definidos pela FIPA;
-
-**Comportamentos Cíclicos e Temporais**
-  Módulo para implementação de comportamentos cíclicos e temporais;
-
-**Banco de Dados**
-  Módulo para interação com banco de dados;
-
-**Envio de Objetos Serializados**
-  Possibilidade de envio de objetos serializados como conteúdo das mensagens FIPA-ACL.
+PADE was developed according to requirements for automation systems. It offers the following library resources for the development of multi-agent systems:
 
 
-Além dessas funcionalidades, o PADE é de fácil instalação e configuração, multiplataforma, podendo ser instalado e utilizado em hardwares embarcados que executam sistema operacional Linux, como Raspberry Pi e BeagleBone Black, bem como sistema operacional Windows.
+**Object Orientation**
+  abstraction for the implementation of a proper environment that allows agents to be executed using object-oriented concepts;
+
+**Execution Environment**
+  module for the initialization of the agent execution environment, which is entirely developed in Python code;
+
+**FIPA-ACL standard messages**
+  module for the implementation and handling of FIPA-ACL messages;
+
+**Message Filter**
+  module that allows filtering messages as desired;
+
+**FIPA Protocols**
+  module for the proper implementation of protocols as defined by FIPA;
+
+**Cyclic and Temporal Behaviors**
+  module for the implementation of cyclical and temporal behavior;
+
+**Database**
+  module for the interaction with database;
+
+**Sending Serialized Objects**
+  it is possible to send serialized objects as a content of FIPA-ACL messages.
 
 
+In addition to the aforementioned functionalities, PADE is easy to install and setup, being multi-platform so that it can be installed and used in embedded hardware running distinct operating systems such as Linux, Raspberry Pi, BeagleBone Black, as well as Windows.
 
-Guia do Usuário
-----------------
+
+User Guide
+----------
 
 .. toctree::
    :maxdepth: 2
@@ -95,8 +94,8 @@ Guia do Usuário
 
 
 
-Referência da API do PADE 
--------------------------
+PADE API References
+-------------------
 
 .. toctree::
    :maxdepth: 2
