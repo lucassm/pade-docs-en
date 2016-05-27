@@ -1,12 +1,12 @@
-Recebendo Mensagens
-===================
+Receiving messages
+==================
 
-No PADE para que um agente possa receber mensagens, basta que o método react() seja implementado, dentro da classe que herda da classe `Agent()`.
+In order to allow agents to receive messages in PADE, it is simply necessary to implement `react()` method inside the class that inherits information from class `Agent()`.
 
-Recebendo mensagens FIPA-ACL com PADE
--------------------------------------
+Receiving FIPA-ACL messages in PADE
+-----------------------------------
 
-No exemplo a seguir são implementados dois agentes distintos, o primeiro é o agente ```remetente``` modelado pela classe `Remetente()`, que tem o papel de enviar uma mensagem ao agente `destinatario` modelado pela classe `Destinatario`, que irá receber a mensagem enviada pelo agente `remetente` e por isso tem o método `react()` implementado.   
+The following example shows the implementation of two distinct agents: ```sender```, which is modeled by class `Sender()`, being responsible for sending a message; and `receiver`, which is modeled by class `Receiver()`, which receives the sent message and also aggregates `react()` method.
 
 ::
 
@@ -57,16 +57,16 @@ No exemplo a seguir são implementados dois agentes distintos, o primeiro é o a
         start_loop(agentes, gui=True)
 
 
-Visualização via Interface Gráfica
-----------------------------------
+GUI
+---
 
-A seguir é possível observar a interface gráfica do PADE que mostra os agentes cadastrados no AMS.
+It is possible to see PADE GUI as follows, which shows the agents registered in the multi-agent system.
 
 .. figure:: ../img/janela_agentes.png
     :align: center
     :width: 4.5in
 
-Ao clicar na mensagem recebida pelo agente `destinatario` é possível observar todos os dados contidos na mensagem:
+By clicking the message received by the agent, it is possible to see its respective content.
 
 .. figure:: ../img/janela_mensagem.png
     :align: center

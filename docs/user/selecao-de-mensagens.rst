@@ -1,16 +1,16 @@
-Seleção de Mensagens
-====================
+Filtering Messages
+==================
 
-Com PADE é possível implementar filtros de mensagens de maneira simples e direta, por meio da classe Filtro:
+It is possible to implement message filters in PADE in a simple and direct way using class *Filter()*:
 
 ::
 
     from pade.acl.filters import Filter
 
-Filtrando mensagens com o módulo filters
-----------------------------------------
+Filtering messages with Filters module
+--------------------------------------
 
-Por exemplo para a seguinte mensagem:
+Let’s consider the following message:
 
 ::
 
@@ -23,7 +23,7 @@ Por exemplo para a seguinte mensagem:
     message.add_receiver(AID('destinatario'))
 
 
-Podemos criar o seguinte filtro:
+In this case, it is possible to create the following filter:
 
 ::
 
@@ -32,7 +32,7 @@ Podemos criar o seguinte filtro:
     f.performative = ACLMessage.REQUEST
 
 
-Em uma sessão do interpretador Python é possível observar o efeito da aplicação do filtro sobre a mensagem:
+It is possible to notice how the filter works when applied to a message in a Python interpreter session.
 
 .. code-block:: python
 
@@ -40,13 +40,13 @@ Em uma sessão do interpretador Python é possível observar o efeito da aplica�
     False
 
 
-Ajustando agora o filtro para outra condição:
+Now, the filter is adjusted for another condition:
 
 .. code-block:: python
 
     f.performative = ACLMessage.INFORM
 
-E aplicando o filtro novamente sobre a mensagem, obtemos um novo resultado:
+Once again, it is applied to the message, as a new result is obtained.
 
 .. code-block:: python
 

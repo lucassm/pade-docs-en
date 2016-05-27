@@ -1,12 +1,12 @@
-Agentes Temporais
-=================
+Time agents
+===========
 
-Em aplicações reais é comum que o comportamento do agente seja executado de tempos em tempos e não apenas uma vez, mas como fazer isso no PADE? :(
+In real applications the agent behavior is typically run from time to time, and not only once. How is it possible to implement it in PADE? :(
 
-Execução de um agente temporal
-------------------------------
+Running a time agent
+--------------------
 
-Este é um exemplo de um agente que executa indefinidamente um comportamento a cada 1,0 segundos:
+This is the example of an agent that runs indefinitely at 1.0-second intervals.
 
 ::
 
@@ -53,10 +53,10 @@ Este é um exemplo de um agente que executa indefinidamente um comportamento a c
 
         start_loop(agents, gui=True)
 
-Execução de dois agentes temporais
-----------------------------------
+Running two time agents
+-----------------------
 
-Mas e se eu quiser dois agentes com o mesmo comportamento!? Não tem problema, basta instanciar um outro agente com a mesma classe!
+What if two agents with the same behavior are necessary? No problem at all. Just instantiate another agent with the same class.
 
 ::
 

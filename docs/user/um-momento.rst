@@ -1,14 +1,15 @@
-Um momento Por Favor!
-=====================
+ One moment, please!
+====================
 
-Com PADE é possível adiar a execução de um determinado trecho de código de forma bem simples! É só utilizar o método *call_later()* disponível na classe *Agent()*. 
+PADE allows postponing the execution of a given code part quite simply! Just employ *call_later()* method, which is available in class *Agent()*.
 
-Como utilizar o método call_later()
+
+Using call_later() method
 -----------------------------------
 
-Para utilizar *call_later()*, os seguintes parâmetros devem ser especificados: tempo de atraso, metodo que deve ser chamado após este tempo e argumento do metodo utilizado, *call_later(tempo, metodo, *args)*. 
+In order to use *call_later()* properly, the following parameters must be specified: delay type, method supposed to be called after such time interval and its respective argument using the following syntax: *call_later(time, method, *args)*.
 
-No código a seguir utiliza *call_later()* é utilizado na classe *Remetente()* no método *on_start()* para assegurar que todos os agentes já foram lançados na plataforma, chamando o método *send_message()* 4,0 segundos após a inicialização dos agentes:
+The following code employs call_later() in classe Sender() using on_start() method to ensure that all agents are launched in the platform, thus initializing send_message() 4.0 seconds after the execution of agents:
 
 ::
 

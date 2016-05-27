@@ -1,49 +1,49 @@
-Enviando Mensagens
-==================
+Sending messages
+================
 
-Para enviar uma mensagem com o PADE é muito simples! As mensagens enviadas pelos agentes desenvolvidos com PADE seguem o padrão FIPA-ACL e têm os seguintes campos:
+Sending a message using PADE is quite simple! The messages sent by PADE-based agents use FIPA-ACL standard and have the following fields:
 
-* *conversation-id:* identidade única de uma conversa;
-* *performative:* rótulo da mensagem;
-* *sender:* remetente da mensagem;
-* *receivers:* destinatários da mensagem;
-* *content:* conteúdo da mensagem;
-* *protocol:* protocolo da mensagem;
-* *language:* linguagem utilizada;
-* *encoding:* codificação da mensagem;
-* *ontology:* ontologia utilizada;
-* *reply-with:* Expressão utilizada pelo agente de resposta a identificar a mensagem;
-* *reply-by:* A referência a uma ação anterior em que a mensagem é uma resposta;
-* *in-reply-to:* Data/hora indicando quando uma resposta deve ser recebida..
+* *conversation-id:* conversation unique identity;
+* *performative:* message label;
+* *sender:* message sender;
+* *receivers:* message receivers;
+* *content:* message content;
+* *protocol:* message protocol;
+* *language:* adopted language;
+* *encoding:* encoding message;
+* *ontology:* adopted ontology;
+* *reply-with:* expression used by the answer agent to identify a message;
+* *reply-by:* reference to a previous action, where the message is an answer.
+* *in-reply-to:* date/time label indicating when an answer must be received.
 
-Mensagens FIPA-ACL no PADE
---------------------------
+FIPA-ACL messages in PADE
+-------------------------
 
-Uma mensagem FIPA-ACL pode ser montada no pade da seguinte forma:
+A FIPA-ACL message can be structured in the following form: 
 
 ::
 
     from pade.acl.messages import ACLMessage, AID
     message = ACLMessage(ACLMessage.INFORM)
     message.set_protocol(ACLMessage.FIPA_REQUEST_PROTOCOL)
-    message.add_receiver(AID('agente_destino'))
-    message.set_content('Ola Agente')
+    message.add_receiver(AID('agent_receiver'))
+    message.set_content('Hello, Agent!')
 
 
-Enviando uma mensagem com PADE
-------------------------------
+Sending a Message in PADE
+-------------------------
 
-Uma vez que se está dentro de uma instância da classe `Agent()` a mensagem pode ser enviada, simplesmente utilizando o comando:
+Once inside a given instance of class Agent(), the message can be sent by simply typing the following command:
 
 ::
 
     self.send(message)
 
 
-Mensagem no padrão FIPA-ACL
----------------------------
+FIPA-ACL standard messages
+--------------------------
 
-Realizando o comando `print message` a mensagem no padão FIPA ACL será impressa na tela:
+By using print message command, a FIPA-ACL message will be displayed as follows:
 
 ::
 
@@ -52,7 +52,7 @@ Realizando o comando `print message` a mensagem no padão FIPA ACL será impress
         :receiver
             (set
                 (agent-identifier
-                    :name agente_destino@localhost:51645
+                    :name agent_destination@localhost:51645
                     :addresses 
                         (sequence
                         localhost:51645
@@ -60,15 +60,15 @@ Realizando o comando `print message` a mensagem no padão FIPA ACL será impress
                 )
 
             )
-        :content "Ola Agente"
+        :content "Hello, agent!"
         :protocol fipa-request protocol
     )
 
 
-Mensagem no padrão XML
-----------------------
+XML standard messages
+---------------------
 
-Mas também é possível obter a mensagem no formato XML por meio do comando `print message.as_xml()`
+It is also possible to get messages in XML format using `print message.as_xml()` command.
 
 .. code-block:: xml
 

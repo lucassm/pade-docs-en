@@ -1,27 +1,27 @@
-Instalação
+Installation
 ==========
 
-Instalar o PADE em seu computador, ou dispositivo embarcado é bem simples, basta que ele esteja conectado à internet!
+Installing PADE in your PC, laptop, or embedded device is quite easy. You just need to be connected to the internet!
 
-Instalação via PIP
-------------------
+Installation via pip
+--------------------
 
-Para instalar o PADE via PIP basta digitar em um terminal:
+To install PADE via pip, just type the following command line:
 
 .. code-block:: console
 
     $ pip install pade
 
 
-Pronto! O Pade está instalado!
+Done! PADE is installed!
 
 .. warning::
-    Atenção! O PADE é oficalmente testado no ambiente Ubuntu 14.04 LTS. Sendo necessário a instalação dos pacotes python-twisted-qt4reactor e pyside
+    Warning: PADE has been officially tested in Ubuntu 14.04 LTS environment, as it is necessary to install packages python-twisted-qt4reactor and pyside for this purpose.
 
-Instalação via GitHub
----------------------
+Installation via GitHub
+-----------------------
 
-Se você quiser ter acesso ao fonte do PADE e instala-lo a partir do fonte, basta digitar as seguintes linhas no terminal:
+If you wish to access PADE source code and install it using this approach, just type the following command lines:
 
 .. code-block:: console
 
@@ -29,57 +29,57 @@ Se você quiser ter acesso ao fonte do PADE e instala-lo a partir do fonte, bast
     $ cd Pade
     $ python setup.py install 
 
-Pronto o PADE está pronto para ser utilizado, faça um teste no interpretador Python digitando:
+Done! PADE is ready to be used! Test Python interpreted using the following command:
 
 ::
 
     from pade.misc.utility import display_message
 
-Instalando o PADE em um ambiente virtual
+Installing PADE in a virtual environment
 ----------------------------------------
 
-Quando se trabalha com módulos Python é importante saber criar e manipular ambientes virtuais para gerenciar as dependências do projeto de uma maneira mais organizada. Aqui iremos mostrar como criar um ambiente virtual python, ativá-lo e utilizar o pip para instalar o PADE. Para uma visão mais detalhada sobre ambientes virtuais Python, acesse: `Python Guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_.
+When dealing with Python modules, it is important to know how to create and manipulate virtual environments in order to manage the project dependencies in a more organized way. Here we will show how it is possible to create a virtual Python environment, activating it and using pip to install PADE. Please, access `Python Guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for a more detailed view on virtual Python environments:
 
-Primeiro você irá precisar ter o pacote virtualenv instalado em seu PC, instale-o digitando o comando:
+Firstly you need to install virtualenv package in your PC typing the following command:
 
 .. code-block:: console
 
 	$ pip install virtualenv
 
-Após instalado o virtualenv é hora de criar um ambiente virtual, por meio do seguinte comando:
+After installing virtualenv, it is time to create a virtual environment with the following command:
 
 .. code-block:: console
 	
 	$ cd my_project_folder 
 	$ virtualenv venv
 
-Para ativar o ambiente virtual criado, digite o comando:
+Type the following command to activate the virtual environment:
 
 .. code-block:: console
 	
 	$ source venv/bin/activate
 
-Agora basta instalar o pade, por meio do pip:
+Now, just install PADE via pip:
 
 .. code-block:: console
 
 	$ pip install pade
  
 
-Ativando a interface gráfica
-----------------------------
+Activating the graphical user interface (GUI)
+---------------------------------------------
  
-Para que a interface gráfica do PADE funcione é necessário que o pacote PySide, um binding do Qt, esteja instalado. Como não existem binários do PySide disponíveis para Linux e o procedimento de compilação é bastante demorado, é necessário fazer o seguinte procedimento:
+It is necessary to install PySide package, which is a Qt binding, so that PADE graphical user interface (GUI can be properly used. Since there are no Pyside binaries available for Linux and the involved procedure is quite long, it is necessary to perform the following actions:
 
-1. Instale o PySide via linha de comando:
+1. Install PySide with the following command:
 
 .. code-block:: console
 
 	$ sudo apt-get install python-pyside
 
-2. Copie a pasta com a instalação do PySide da pasta site-packages, onde fica a instalação padrão do Python em seu sistema operacional, e então coloque dentro da pasta onde ficam instalados os pacotes padrões do ambiente virtual, no nosso caso: venv/lib/python2.7/site-packages.
+2. Copy PySide installation folder from folder site-packages, which is the standard path used by your operating system, to the one where the standard packages of the virtual environment are currently installed. In this case, the path is venv/lib/python2.7/site-packages.
 
-Pronto a instalação do PySide no ambiente virtual está concluída, mas outro procedimento que deve ser realizado é a instalação do reactor que interage com o loop de eventos do PySide, para isso, digite:
+Done! PySide is installed in the virtual environment, but another procedure must still be carried out, which consists in installing the reactor that interacts with Pyside event loop. For this purpose, type the following command:
 
 .. code-block:: console
 

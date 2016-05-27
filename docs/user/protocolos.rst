@@ -1,13 +1,13 @@
-Protocolos
+Protocols
 ==========
 
-O PADE tem suporte aos protocolos mais utilizados estabelecidos pela FIPA, são eles:
+PADE supports the most used protocols established by FIPA, which are:
 
 * :ref:`FIPA-Request`
 * :ref:`FIPA-Contract-Net`
 * :ref:`FIPA-Subscribe`
 
-No PADE qualquer protocolo deve ser implementado como uma classe que extende a classe do protocolo desejado, por exemplo para implementar o protocolo FIPA-Request, deve ser implementada uma classe que implementa a herança da classe FipaRequestProtocol:
+Any protocol in PADE must be implemented as an extended class. For instance, if FIPA-Request protocol is required, a given class supposed to inherit features from class FipaRequestProtocol is necessary.
 
 ::
 
@@ -24,17 +24,17 @@ No PADE qualquer protocolo deve ser implementado como uma classe que extende a c
 FIPA-Request
 ------------
 
-O protocolo FIPA-Request é o mais simples de se utilizar e constitui uma padronização do ato de requisitar alguma tarefa ou informação de um agente iniciador para um agente participante.
+FIPA-Request is the simplest protocol used as a normalized representation for requesting a task or information from an initiator agent to a participant one.
 
-O diagrama de comunicação do protocolo FIPA-Request está mostrado na Figura abaixo:
+The communication diagram used by FIPA-Request protocol is shown as follows.
 
 .. image:: ../img/seq_diag_request.png
     :align: center
     :width: 4.5in
 
-Para exemplificar o protocolo FIPA-Request, iremos utilizar como exemplo a interação entre dois agentes, um agente relogio, que a cada um segundo exibe na tela a data e o horário atuais, mas com um problema, o agente relogio não sabe calcular nem a data, e muito menos o horário atual. Assim, ele precisa requisitar estas informações do agente horario que consegue calcular estas informações.
+In order to show an example using FIPA-Request, the interaction between two agents is considered. Agent Clock displays the updated time and date every one second, although it is not able to determine such data. On the other hand, agent Time is used to provide them accurately.
 
-Dessa forma, será utilizado o protocolo FIPA-Request, para que estas informações sejam trocadas entre os dois agentes, sendo o agente relógio o iniciante, no processo de requisição e o agente horário, o participante, segue o código do exemplo:
+Then, FIPA-Request can be used so that information is changed between the agents. Agent Clock acts as an initiator, while agent Time corresponds to the participant according to the following code:
 
 ::
     
@@ -137,25 +137,25 @@ Dessa forma, será utilizado o protocolo FIPA-Request, para que estas informaç�
         main()
 
 
-Na primeira parte do código são importadas todos módulos e classes necessários à construção dos agentes, logo em seguida as classes que implementam o protocolo são definidas, as classes ComptRequest e ComptRequest2 que serão associadas aos comportamentos dos agentes horario e relogio, respectivamente. Como o agente relogio precisa, a cada segundo enviar requisição ao agente horario, então também deve ser associado a este agente um comportamento temporal, definido na classe ComportTemporal que envia uma solicitação ao agente horario, a cada segundo.
+All modules and classes necessary for the implementation of agents are imported in the first part of the code. Then the classes responsible for the protocol implementation can be defined i.e. classes BehRequest and BehRequest2, which are associated with the behaviors of agents Time and Clock, respectively. Since agent Clock needs to send a request to agent Time every one second, a timed behavior must be associated to it, which is defined according to class TimedBehavior.
 
-Em seguida, os agente propriamente ditos, são definidos nas classes AgenteHoraio e AgenteRelogio que estendem a classe Agent, nessas classes é que os comportamentos e protocolos são associados a cada agente.
+Then the very agents are defined in classes AgentTime and AgentClock, which are an extension of class Agent and determine their respective behaviors and protocols.
 
-Na ultima parte do código, é definida uma função main que indica a localização do agente ams, instancia os agentes e dá inicio ao loop de execução.
+Function main is defined in the last part of the code, which indicates the location of agent mas, thus instantiating all agents and starting the loop execution.
 
 .. _FIPA-Contract-Net:
 
 FIPA-Contract-Net
 -----------------
 
-O protocolo FIPA-Contract-Net é utilizado para situações onde é necessário realizar algum tipo de negociação entre agentes. Da mesma forma que no protocolo FIPA-Request, no protocolo FIPA-ContractNet existem dois tipos de agentes, um agente que inicia a negociação, ou agente iniciante, fazendo solicitação de propostas e um ou mais agentes que participam da negociação, ou agentes pasticipantes, que repondem às solicitações de propostas do agente iniciante. Veja:
+FIPA-Contract-Net protocol is used in cases where any negotiation between agents is necessary. Analogously to FIPA-Request protocol, there are two types of agents: one responsible for starting the negotiation and making requests, called initiator; and one or more agents that join the negotiation, called participants, which answer the requests sent by the initiator. Let’s see an example.
 
 .. figure:: ../img/seq_diag_contract.png
     :align: center
     :width: 4.5in
 
 
-Um exemplo de utilização do protocolo FIPA-ContractNet na negociação é mostrado abaixo, com a solicitação de um agente iniciante por potência elétrica a outros dois agentes participantes:
+An example regarding the use of FIPA-ContractNet in negotiation is shown as follows, where an initiator agent requests electric power to another two participant agents.
 
 ::
 
@@ -356,9 +356,9 @@ Um exemplo de utilização do protocolo FIPA-ContractNet na negociação é most
 
         start_loop(agents_list, gui=True)
 
-O código que implementa os agentes que se comunicam utilizando o protocolo FIPA-ContractNet, definine as duas classes do protocolo, a primeira implementa o comportamento do agente Iniciante (CompContNet1) e a segunda implementa o comportamento do agente participante (CompContNet2). Note que para a classe iniciante é necessário que uma mensagem do tipo CFP (call for proposes) seja montada e o método on_start() seja chamado, isso é feito dentro da classe que implementa os agente iniciante, AgenteIniciante(), já a classe AgenteParticipante(), implementa os agentes que participarão da negociação como propositores.
+The code that implements the communication between agents using FIPA-ContractNet defines two classes for the protocol. The first one corresponds to the initiator behavior (CompContNet1), while the second one represents the participant behavior (CompContNet2). It is worth to mention that a CFP (call for proposals) message is necessary in order to structure the initiator class and call on_start() method. This action occurs inside the class responsible for implementing the initiator agent i.e. AgentInitiator(). On the other hand, AgentParticipant() is responsible for the implementation of agents that present proposals for the negotiation.
 
-É possível observar as mensagens da negociação na intergace gráfica do PADE, veja:
+The messages regarding the negotiation can be seen in PADE GUI as follows.
 
 .. image:: ../img/contract_net/ACLMessage_todas.png
     :align: center
@@ -369,15 +369,15 @@ O código que implementa os agentes que se comunicam utilizando o protocolo FIPA
 FIPA-Subscribe
 --------------
 
-O protocolo FIPA-Subscribe, implementa o comportamento de editor-assinante, que conssiste na presença de um agente editor que pode aceitar a associação de outros agentes interessados, agentes assinantes, em algum tipo de informação que este agente possua, assinando a informação e recebendo mensagem sempre que esta informação for disponibilizada pelo agente editor. Veja:
+FIPA-Subscribe protocol implements the editor-subscriber behavior, which employs an agent editor that can accept the association of other agents eventually interested in some specific information. The subscriber agent then receives a message whenever information is available from the editor. Let’s see an example:
 
 .. figure:: ../img/seq_diag_subscribe.png
     :align: center
     :width: 4.5in
 
-Para assinar a informação o agente precisa enviar uma mensagem SUSBCRIBE para o agente editor. Que por sua vez pode aceitar ou recusar a assinatura (AGREE/REFUSE). Quando uma informação é atualizada, então o editor publica esta informação para todos os seus assinantes, enviando-os mensagens INFORM.
+In order to subscribe to information, a SUBSCRIBE message must be sent from the agent to the editor. Subscription can be then be accepted or denied (AGREE/REFUSE). If information is updated, the editor is responsible for publishing it to all respective subscribers by sending INFORM messages.
 
-O código que implementa um agente editor e dois agentes assinantes utilizando PADE pode ser visualizado abaixo:
+The code for the implementation of one agent editor and two agents subscribers using PADE can be seen as follows.
 
 ::
     

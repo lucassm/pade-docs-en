@@ -1,13 +1,12 @@
-Meu Primeiro Agente
-===================
+My first agent
+==============
 
+Now it is time to create a real agent!
 
-Agora já está na hora de construir um agente de verdade!
+Creating my first agent
+-----------------------
 
-Construindo meu primeiro agente
--------------------------------
-
-Para implementar seu primeiro agente abra seu editor de textos preferido e digite o seguinte código:
+In order to create your first agent, open your favorite text editor and type (or copy and paste) the following code:
 
 ::
 
@@ -35,6 +34,6 @@ Para implementar seu primeiro agente abra seu editor de textos preferido e digit
         start_loop(agents, gui=True)
 
 
-Este já é um agente, mas não tem muita utilidade, não é mesmo! Executa apenas uma vez :(
+This is an agent, but it is not quite useful at all, is it? It can be only run once. :(
 
-Então como construir um agente que tenha seu comportamento executado de tempos em tempos?
+The following question remains: how is it possible to create an agent whose behavior is run from time to time?

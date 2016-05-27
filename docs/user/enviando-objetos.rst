@@ -1,20 +1,20 @@
-Enviando Objetos
-================
+Sending objects
+===============
 
-Nem sempre o que é preciso enviar para outros agentes pode ser representado por texto simpes não é mesmo!
+It is not always possible to represent the content that must be sent to other agents using a simple text, is it?
 
-Para enviar objetos encapsulados no content de mensagens FIPA-ACL com PADE basta utilizar o módulo nativo do Python *pickle*.
+In order to attach objects to FIPA-ACL messages in PADE, it is only necessary to use the Python native module called *pickle*.
 
-Enviando objetos serializados com pickle
-----------------------------------------
+Sending serialized objects using pickle
+---------------------------------------
 
-Para enviar um objeto serializado com piclke basta seguir os passos:
+The following steps can be used to send a serialized object with pickle:
 
 ::
 
     import pickle
 
-*pickle* é uma biblioteca para serialização de objetos, assim, para serializar um objeto qualquer, utilize `pickle.dumps()`, veja:
+*Pickle* is a library dedicated to serialized objects, while `pickle.dumps()` must be used according to the following syntax:
 
 ::
 
@@ -22,16 +22,16 @@ Para enviar um objeto serializado com piclke basta seguir os passos:
     dados_serial = pickle.dumps(dados)
     message.set_content(dados_serial)
 
-Pronto! O objeto já pode ser enviado no conteúdo da mensagem. 
+Done! The object can now be sent as attached to the message content.
 
-Recebendo objetos serializados com pickle
-----------------------------------------
+Receiving serialized objects using pickle
+-----------------------------------------
 
-Agora para receber o objeto, basta carregá-lo utilizando o comando:
+Now, the object can be received by loading it with the following command:
 
 ::
 
     dados_serial = message.content
     dados = pickle.loads(dados_serial)
 
-Simples assim ;)
+Plain simple ;)

@@ -1,9 +1,10 @@
-Interface Gráfica
-=================
+GUI
+===
 
-Para ativar a funcionalidade de interface gráfica do PADE é bem simples, basta passar o parâmetro *gui=True* na função 
+Activating the GUI in PADE is rather simple, as it is only necessary to set parameter gui=True in the following function:
+
 ::
 
     start_loop(agentes, gui=True)
 
-A interface gráfica do PADE ainda está bem simples e sem muitas funcionalidades, implementada com base no framework para desenvolvimento de GUI Qt/PySide, isso gera ulgumas complicações. Para a versão 2.0 será implementada uma interface web com base no framework `Flask <http://flask.pocoo.org/>`_, mais completa e funcional.
+PADE GUI is currently simple and does not present many functions, since its implementation is based on framework Qt/PySide, thus bringing some complex issues to be solved. However, version 2.0 is supposed to present a more complete and functional web-based GUI using `Flask <http://flask.pocoo.org/>`_ framework.

@@ -1,22 +1,22 @@
-Alô Mundo
-=========
+Hello, world!
+=============
 
-PADE foi implementado com um objetivo central: simplicidade!
+PADE was created with a main purpose: simplicity!
 
-Depois de ter o PADE instalado em seu computador fica bem simples começar a trabalhar.
+After PADE is installed in your PC, it is quite simple to start using it.
 
-Em uma pasta crie um arquivo chamado start_ams.py com o seu editor de texto preferido, e copie e cole o seguinte trecho de código dentro dele:
+In a given folder, create a file called *start_mas.py* by using your favorite text editor. Then type (or copy and paste) the following code inside it:
 
 ::
 
-    # este e o arquivo start_ams.py
+    # this is file start_mas.py
     from pade.misc.common import set_ams, start_loop
 
     if __name__ == '__main__':
         set_ams('localhost', 8000)
         start_loop(list(), gui=True)
 
-A essa altura você já deve estar vendo a interface gráfica de monitoramento dos agentes em Python, assim como essa:
+You will see a graphic interface like this:
 
 .. figure:: ../img/InterfaceSniffer.png
     :align: center

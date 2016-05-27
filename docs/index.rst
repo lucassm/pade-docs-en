@@ -6,8 +6,8 @@
 Python Agent DEvelopment framework
 ==================================
 
-Sistemas Multiagentes para Python!
-----------------------------------
+Multi-Agent Systems in Python!
+------------------------------
 
 PADE is a framework for the development, execution, and management of multi-agent systems in distributed computer environments.
 
